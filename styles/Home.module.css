@@ -1,13 +1,13 @@
 .container {
   background-color: #111;
+  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 0.5rem;
+  padding: 0 20px;
 }
 
 .text {
-  color: #fff;
   text-align: center;
 }
