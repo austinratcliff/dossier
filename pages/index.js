@@ -4,10 +4,21 @@ import { IconButton, makeStyles } from '@material-ui/core'
 import { MessageCircle, User } from 'react-feather'
 import Head from 'next/head'
 import Link from 'next/link'
-import styles from '../styles/Home.module.css'
 
 export default function Home() {
   const useStyles = makeStyles({
+    container: {
+      backgroundColor: '#111',
+      color: '#fff',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '0 20px'
+    },
+    text: {
+      textAlign: 'center'
+    },
     aboutButton: {
       '&.MuiButtonBase-root': {
         position: 'absolute',
@@ -30,14 +41,14 @@ export default function Home() {
       exit={{ opacity: 0 }}
       transition={{ ease: 'easeInOut' }}
     >
-      <Div100vh className={styles.container}>
+      <Div100vh className={classes.container}>
         <Head>
           <title>Austin Ratcliff</title>
           <link rel='icon' href='/favicon.png' />
         </Head>
 
-        <h1 className={styles.text}>Austin Ratcliff</h1>
-        <h2 className={styles.text}>Software Developer</h2>
+        <h1 className={classes.text}>Austin Ratcliff</h1>
+        <h2 className={classes.text}>Software Developer</h2>
         <Link href='/about' passHref>
           <IconButton classes={{ root: classes.aboutButton }} color='inherit'>
             <User />

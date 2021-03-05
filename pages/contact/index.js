@@ -4,10 +4,48 @@ import { IconButton, makeStyles } from '@material-ui/core'
 import { ChevronDown, GitHub, Instagram, Linkedin, Mail } from 'react-feather'
 import Head from 'next/head'
 import Link from 'next/link'
-import styles from '../../styles/Contact.module.css'
 
 export default function Contact() {
   const useStyles = makeStyles({
+    container: {
+      backgroundColor: '#fff',
+      color: '#111',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      overflow: 'scroll',
+      padding: '0 20px 100px 20px'
+    },
+    heading: {
+      margin: '50px 0',
+      textAlign: 'center'
+    },
+    border: {
+      border: '5px solid #111',
+      boxShadow: '10px 10px #111',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: 25,
+      width: '100%',
+      maxWidth: 500
+    },
+    icon: {
+      marginBottom: 10
+    },
+    link: {
+      marginBottom: 20,
+      '&:last-child': {
+        marginBottom: 0
+      }
+    },
+    highlight: {
+      background:
+        'linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, #92a8d1 50%)',
+      padding: '0 5px'
+    },
     homeButton: {
       '&.MuiButtonBase-root': {
         position: 'absolute',
@@ -24,41 +62,41 @@ export default function Contact() {
       exit={{ y: '100%' }}
       transition={{ duration: 1, ease: 'easeInOut' }}
     >
-      <Div100vh className={styles.container}>
+      <Div100vh className={classes.container}>
         <Head>
           <title>AR — Contact</title>
           <link rel='icon' href='/favicon.png' />
         </Head>
 
-        <h1 className={styles.heading}>Contact</h1>
-        <div className={styles.border}>
-          <Mail className={styles.icon} />
-          <a className={styles.link} href='mailto:hello@austinratcliff.com'>
-            <span className={styles.highlight}>hello@austinratcliff.com</span>
+        <h1 className={classes.heading}>Contact</h1>
+        <div className={classes.border}>
+          <Mail className={classes.icon} />
+          <a className={classes.link} href='mailto:hello@austinratcliff.com'>
+            <span className={classes.highlight}>hello@austinratcliff.com</span>
           </a>
-          <Linkedin className={styles.icon} />
+          <Linkedin className={classes.icon} />
           <a
-            className={styles.link}
+            className={classes.link}
             href='https://www.linkedin.com/in/austinratcliff'
             target='_blank'
           >
-            <span className={styles.highlight}>@austinratcliff</span>
+            <span className={classes.highlight}>@austinratcliff</span>
           </a>
-          <GitHub className={styles.icon} />
+          <GitHub className={classes.icon} />
           <a
-            className={styles.link}
+            className={classes.link}
             href='https://www.github.com/austinratcliff'
             target='_blank'
           >
-            <span className={styles.highlight}>@austinratcliff</span>
+            <span className={classes.highlight}>@austinratcliff</span>
           </a>
-          <Instagram className={styles.icon} />
+          <Instagram className={classes.icon} />
           <a
-            className={styles.link}
+            className={classes.link}
             href='https://www.instagram.com/austin.ratcliff'
             target='_blank'
           >
-            <span className={styles.highlight}>@austin.ratcliff</span>
+            <span className={classes.highlight}>@austin.ratcliff</span>
           </a>
         </div>
         <Link href='/' passHref>
