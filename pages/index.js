@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import Div100vh from 'react-div-100vh'
 import { IconButton, makeStyles } from '@material-ui/core'
-import { User } from 'react-feather'
+import { MessageCircle, User } from 'react-feather'
 import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
@@ -12,6 +12,12 @@ export default function Home() {
       '&.MuiButtonBase-root': {
         position: 'absolute',
         top: 10
+      }
+    },
+    contactButton: {
+      '&.MuiButtonBase-root': {
+        position: 'absolute',
+        bottom: 10
       }
     }
   })
@@ -35,6 +41,11 @@ export default function Home() {
         <Link href='/about' passHref>
           <IconButton classes={{ root: classes.aboutButton }} color='inherit'>
             <User />
+          </IconButton>
+        </Link>
+        <Link href='/contact' passHref>
+          <IconButton classes={{ root: classes.contactButton }} color='inherit'>
+            <MessageCircle />
           </IconButton>
         </Link>
       </Div100vh>
