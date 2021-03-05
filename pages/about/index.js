@@ -1,7 +1,12 @@
 import { motion } from 'framer-motion'
 import Div100vh from 'react-div-100vh'
-import { IconButton, makeStyles } from '@material-ui/core'
-import { ChevronUp } from 'react-feather'
+import {
+  IconButton,
+  makeStyles,
+  useMediaQuery,
+  useTheme
+} from '@material-ui/core'
+import { ChevronUp, X } from 'react-feather'
 import Head from 'next/head'
 import Link from 'next/link'
 
@@ -50,9 +55,19 @@ export default function About() {
         position: 'absolute',
         bottom: 10
       }
+    },
+    homeButtonMobile: {
+      '&.MuiButtonBase-root': {
+        position: 'absolute',
+        top: 10,
+        left: 10
+      }
     }
   })
   const classes = useStyles()
+
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('xs'))
 
   return (
     <motion.div
@@ -105,8 +120,15 @@ export default function About() {
           </p>
         </div>
         <Link href='/' passHref>
-          <IconButton classes={{ root: classes.homeButton }} color='inherit'>
-            <ChevronUp />
+          <IconButton
+            classes={
+              isMobile
+                ? { root: classes.homeButtonMobile }
+                : { root: classes.homeButton }
+            }
+            color='inherit'
+          >
+            {isMobile ? <X /> : <ChevronUp />}
           </IconButton>
         </Link>
       </Div100vh>
